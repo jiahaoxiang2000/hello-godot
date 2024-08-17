@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ddl5wu1yw304o"]
+
+[node name="Node" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 79.0
+offset_top = 255.0
+offset_right = 235.0
+offset_bottom = 278.0
+scale = Vector2(6.28, 6.28)
+text = "this is a game by xjh"
