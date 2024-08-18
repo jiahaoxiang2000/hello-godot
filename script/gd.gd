@@ -23,3 +23,13 @@ func _process(delta):
 	if Input.is_action_pressed("ui_down"):
 		velocity = Vector2.DOWN.rotated(rotation) * speed
 	position += velocity * delta
+
+func _ready():
+	var timer = get_node("timerInst")
+	timer.timeout.connect(_on_timer_timeout)
+
+func _on_timer_timeout():
+	visible = not visible
+	
+func _on_button_pressed() -> void:
+	set_process(not is_processing())

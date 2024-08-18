@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://crh8c6cbyksm5"]
+
+[ext_resource type="Script" path="res://script/mob.gd" id="1_huva5"]
+[ext_resource type="Texture2D" uid="uid://2gpmwravvd2e" path="res://assets/art/enemyFlyingAlt_1.png" id="1_rbvcc"]
+[ext_resource type="Texture2D" uid="uid://cjo2vgcn7su1j" path="res://assets/art/enemyFlyingAlt_2.png" id="2_tyehi"]
+[ext_resource type="Texture2D" uid="uid://dpqdb025ndjob" path="res://assets/art/enemySwimming_1.png" id="3_vq1be"]
+[ext_resource type="Texture2D" uid="uid://d32577pd6f5de" path="res://assets/art/enemySwimming_2.png" id="4_0v00t"]
+[ext_resource type="Texture2D" uid="uid://cnbsdtrkcb1fb" path="res://assets/art/enemyWalking_1.png" id="5_8e63t"]
+[ext_resource type="Texture2D" uid="uid://c6vse6tggebbw" path="res://assets/art/enemyWalking_2.png" id="6_m6t8r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm7xv"]
+size = Vector2(21.516, 17.6118)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t48ls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rbvcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tyehi")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vq1be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0v00t")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8e63t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m6t8r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+scale = Vector2(1, 1.007)
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_huva5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.13163e-14, 0)
+rotation = 1.5708
+scale = Vector2(3, 2.839)
+shape = SubResource("RectangleShape2D_xm7xv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_t48ls")
+animation = &"walk"
+frame = 1
+frame_progress = 0.159194
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-1.07409, 0)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

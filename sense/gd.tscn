@@ -3,7 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://c4bg5knmu5nde" path="res://icon.svg" id="1_3h22w"]
 [ext_resource type="Script" path="res://script/gd.gd" id="2_wqxuu"]
 
-[node name="Sprite2D" type="Sprite2D"]
+[node name="Node" type="Node"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1660.0
+offset_top = 51.0
+offset_right = 1867.0
+offset_bottom = 219.0
+text = "Toggle motion"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(943, 509)
 texture = ExtResource("1_3h22w")
 script = ExtResource("2_wqxuu")
+
+[node name="timerInst" type="Timer" parent="Sprite2D"]
+autostart = true
+
+[connection signal="pressed" from="Button" to="Sprite2D" method="_on_button_pressed"]
