@@ -23,7 +23,7 @@ jobs:
         export-templates: true
 
     - name: Build project
-      run: godot --export-release "Windows Desktop" "build/HelloGodot.exe"
+      run: godot --headless --quit --export-release "Windows Desktop"
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
