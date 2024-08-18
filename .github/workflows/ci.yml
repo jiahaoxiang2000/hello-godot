@@ -2,8 +2,11 @@ name: Godot CI
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -20,7 +23,7 @@ jobs:
         export-templates: true
 
     - name: Build project
-      run: godot --export-release "Windows Desktop" 
+      run: godot --export-release "Windows Desktop" "build/HelloGodot.exe"
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
