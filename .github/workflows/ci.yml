@@ -20,7 +20,7 @@ jobs:
         export-templates: true
 
     - name: Build project
-      run: godot --export "Windows Desktop" "build/windows/start.exe"
+      run: godot --export-release "Windows Desktop"
       
     - name: Create GitHub Release
       id: create_release
@@ -39,8 +39,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: build/windows/start.exe
-        asset_name: start.exe
+        asset_path: build/HelloGodot.exe
+        asset_name: HelloGodot.exe
         asset_content_type: application/octet-stream
     
             
