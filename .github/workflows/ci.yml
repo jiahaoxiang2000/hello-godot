@@ -25,7 +25,7 @@ jobs:
     - name: Build project
       run: |
         mkdir build
-        godot -v --export-release --headless "Windows Desktop"
+        godot -v --version
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
