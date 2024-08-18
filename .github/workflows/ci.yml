@@ -24,7 +24,7 @@ jobs:
         alias: godot4
 
     - name: Print Godot version
-      run: v4.3-stable/bin/godot4 --version
+      run: ./v4.3-stable/bin/godot4 --version
       
 
     - name: Upload build artifact
