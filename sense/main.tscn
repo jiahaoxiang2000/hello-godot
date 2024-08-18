@@ -1,11 +1,37 @@
-[gd_scene format=3 uid="uid://ddl5wu1yw304o"]
+[gd_scene load_steps=3 format=3 uid="uid://ddl5wu1yw304o"]
+
+[ext_resource type="PackedScene" uid="uid://b6eu33h48pf84" path="res://compose/ball.tscn" id="1_qjxdg"]
+[ext_resource type="PackedScene" uid="uid://boautaiyo7jnf" path="res://compose/Wall.tscn" id="2_bo75d"]
 
 [node name="Node" type="Node"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 79.0
-offset_top = 255.0
-offset_right = 235.0
-offset_bottom = 278.0
-scale = Vector2(6.28, 6.28)
-text = "this is a game by xjh"
+[node name="walls" type="Node" parent="."]
+
+[node name="Wall" parent="walls" instance=ExtResource("2_bo75d")]
+position = Vector2(440, 642)
+rotation = 0.850819
+scale = Vector2(1, 1)
+
+[node name="Wall2" parent="walls" instance=ExtResource("2_bo75d")]
+position = Vector2(900, 863)
+rotation = 0.00377756
+scale = Vector2(1, 1)
+
+[node name="Wall3" parent="walls" instance=ExtResource("2_bo75d")]
+position = Vector2(1536, 641)
+rotation = -0.584484
+scale = Vector2(1.38499, 1)
+
+[node name="balls" type="Node" parent="."]
+
+[node name="ball" parent="balls" instance=ExtResource("1_qjxdg")]
+position = Vector2(420, 138)
+
+[node name="ball2" parent="balls" instance=ExtResource("1_qjxdg")]
+position = Vector2(1729, 67)
+
+[node name="ball3" parent="balls" instance=ExtResource("1_qjxdg")]
+position = Vector2(733, 90)
+
+[node name="ball4" parent="balls" instance=ExtResource("1_qjxdg")]
+position = Vector2(1316, 64)

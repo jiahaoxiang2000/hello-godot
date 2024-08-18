@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://eq5hki4t16lk"]
+
+[ext_resource type="PackedScene" uid="uid://b6eu33h48pf84" path="res://compose/ball.tscn" id="1_3gtgg"]
+
+[node name="balls" type="Node"]
+
+[node name="ball" parent="." instance=ExtResource("1_3gtgg")]
+position = Vector2(420, 138)
+
+[node name="ball2" parent="." instance=ExtResource("1_3gtgg")]
+position = Vector2(1729, 67)
+
+[node name="ball3" parent="." instance=ExtResource("1_3gtgg")]
+position = Vector2(733, 90)
+
+[node name="ball4" parent="." instance=ExtResource("1_3gtgg")]
+position = Vector2(1316, 64)

@@ -14,3 +14,8 @@ config/name="Hello Godot"
 run/main_scene="res://sense/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1960
+window/size/viewport_height=1080
