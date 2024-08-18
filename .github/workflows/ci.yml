@@ -21,9 +21,10 @@ jobs:
       with:
         version: 4.3-stable
         export-templates: true
+        alias: godot4
 
     - name: Print Godot version
-      run: mkdir bulid && godot --version
+      run: godot4 --version
       
 
     - name: Upload build artifact
