@@ -23,8 +23,8 @@ jobs:
         export-templates: true
 
     - name: Print Godot version
-      run: godot -v --version
-      shell: pwsh
+      run: mkdir bulid && godot --version
+      
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
