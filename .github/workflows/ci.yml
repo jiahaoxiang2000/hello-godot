@@ -25,7 +25,7 @@ jobs:
     - name: Print Godot version
       run: |
         mkdir -p build
-        ./v4.3-stable/Godot_v4.3-stable_win64.exe --headless --quit --export-release "Windows Desktop"
+        ./v4.3-stable/Godot_v4.3-stable_win64.exe -v --headless  --export-release "Windows Desktop" --quit
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
