@@ -25,8 +25,7 @@ jobs:
     - name: Build project
       run: |
         mkdir build
-        godot --headless --quit --export-release "Windows Desktop"
-        if ($?) { exit 0 } else { exit 1 }
+        godot -v --export-release --headless "Windows Desktop"
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
