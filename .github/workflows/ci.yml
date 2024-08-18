@@ -22,10 +22,14 @@ jobs:
         version: 4.3-stable
         export-templates: true
 
-    - name: Print Godot version
+    - name: Verify Godot installation
+      run: ./v4.3-stable/Godot_v4.3-stable_win64.exe --version
+      shell: pwsh      
+
+    - name: Build project
       run: |
-        mkdir -p build
-        ./v4.3-stable/Godot_v4.3-stable_win64.exe -v --headless  --export-release "Windows Desktop" "./build/HelloGodot.exe" --quit
+        mkdir build
+        ./v4.3-stable/Godot_v4.3-stable_win64.exe --headless --export-release "Windows Desktop"
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
