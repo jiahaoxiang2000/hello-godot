@@ -22,10 +22,9 @@ jobs:
         version: 4.3-stable
         export-templates: true
 
-    - name: Build project
-      run: |
-        mkdir build
-        godot -v -h
+    - name: Print Godot version
+      run: godot -v --version
+      shell: pwsh
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
